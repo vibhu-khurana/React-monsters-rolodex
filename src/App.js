@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { CardList } from './components/card-list/card-list.component';
 
 class App extends Component {
   constructor() {
@@ -16,15 +17,13 @@ class App extends Component {
   }
 
   render() {
-    const changeTextHandler = () => {
-      this.setState({ name: 'John Smith' });
-    };
-
     return (
       <div className='App'>
-        {this.state.monsters.map((mosnter) => (
-          <h1 key={mosnter.id}>{mosnter.name}</h1>
-        ))}
+        <CardList>
+          {this.state.monsters.map((mosnter) => (
+            <h1 key={mosnter.id}>{mosnter.name}</h1>
+          ))}
+        </CardList>
       </div>
     );
   }
