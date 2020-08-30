@@ -6,7 +6,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'Vibhu khurana',
+      monsters: [
+        {
+          name: 'Dracula',
+          id: 101,
+        },
+        {
+          name: 'Zombie',
+          id: 102,
+        },
+      ],
     };
   }
 
@@ -17,11 +26,9 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <p>{this.state.name}</p>
-          <button onClick={changeTextHandler}>On Change Text</button>
-        </header>
+        {this.state.monsters.map((mosnter) => (
+          <h1 key={mosnter.id}>{mosnter.name}</h1>
+        ))}
       </div>
     );
   }
