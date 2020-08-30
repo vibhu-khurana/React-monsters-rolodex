@@ -10,8 +10,6 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
-
-    //this.handleSearchInputChange = this.handleSearchInputChange.bind(this); // binding this with method to avoid this error.
   }
 
   componentDidMount() {

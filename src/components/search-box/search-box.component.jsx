@@ -1,9 +1,7 @@
 import React from 'react';
 import './search-box.styles.css';
 
-export const SearchBox = (
-  { placeholder, handleChange } // doing destrucing here as well. No taking entire props
-) => (
+export const SearchBox = ({ placeholder, handleChange }) => (
   <input
     className='search'
     type='search'
