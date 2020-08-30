@@ -11,7 +11,7 @@ class App extends Component {
       searchField: '',
     };
 
-    this.handleSearchInputChange = this.handleSearchInputChange.bind(this); // binding this with method to avoid this error.
+    //this.handleSearchInputChange = this.handleSearchInputChange.bind(this); // binding this with method to avoid this error.
   }
 
   componentDidMount() {
@@ -20,9 +20,9 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }));
   }
 
-  handleSearchInputChange(e) {
+  handleSearchInputChange = (e) => {
     this.setState({ searchField: e.target.value });
-  }
+  };
 
   render() {
     const { monsters, searchField } = this.state;
@@ -32,6 +32,7 @@ class App extends Component {
 
     return (
       <div className='App'>
+        <h1>Monster Rolodex</h1>
         <SearchBox
           placeholder='search monster'
           handleChange={this.handleSearchInputChange}
